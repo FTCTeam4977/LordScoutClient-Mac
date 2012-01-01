@@ -36,13 +36,11 @@
         return;
     }
     
-    int autoBowlingBallid = (int)[autoBowlingBall selectedColumn];
-    int autoParkingid = (int)[autoParking selectedColumn];
-    int autoBlockingid = (int)[autoBlocking selectedColumn];
+    int autoBowlingBallid = (int)[[[autoBowlingBall selectedCell] keyEquivalent] intValue];
+    int autoParkingid = (int)[[[autoParking selectedCell] keyEquivalent] intValue];
+    int autoBlockingid = (int)[[[autoBlocking selectedCell] keyEquivalent] intValue];
     
-    int telePlayStyleid = (int)[telePlayStyle selectedColumn];
-    
-    int teleCrateActionsid = (int)[teleCrateActions selectedColumn];
+    int teleCrateActionsid = (int)[[[teleCrateActions selectedCell] keyEquivalent] intValue];
     
     int teleMaxCrateLevelnum;
     if ( (teleMaxCrateLevelnum = [self strToInt:[teleMaxCrateLevel stringValue]]) == -1 )
@@ -89,13 +87,12 @@
         return;
     }
     
-    int teleBowlingBallid = (int)[teleBowlingBall selectedColumn];
+    int teleBowlingBallid = (int)[[[teleBowlingBall selectedCell] keyEquivalent] intValue];
     
     NSString* notes = [[extraNotes stringValue] stringByReplacingOccurrencesOfString:@"~" withString:@""];
     
     const char *data = [[NSString stringWithFormat:@"%@~%i~%i~%i~%i~%i~%i~%i~%i~%i~%i~%i~%i~%@\n", uid, team, 
-                         autoBowlingBallid, autoParkingid, autoBlockingid,
-                         telePlayStyleid, teleCrateActionsid, teleMaxCrateLevelnum,
+                         autoBowlingBallid, autoParkingid, autoBlockingid, teleCrateActionsid, teleMaxCrateLevelnum,
                          teleNumOfCratesnum, teleNumOfStacksnum, teleBallsPerCratenum,
                          teleMagBallsScorednum, teleBowlingBallid, notes] UTF8String];
     
@@ -123,7 +120,6 @@
     [autoParking selectCellAtRow:0 column:0];
     [autoBlocking selectCellAtRow:0 column:0];
     
-    [telePlayStyle selectCellAtRow:0 column:0];
     [teleCrateActions selectCellAtRow:0 column:0];
     
     [teleMaxCrateLevel setStringValue:@""];

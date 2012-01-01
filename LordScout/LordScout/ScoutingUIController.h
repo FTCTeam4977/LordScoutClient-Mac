@@ -14,8 +14,6 @@
     IBOutlet NSMatrix *autoParking;
     IBOutlet NSMatrix *autoBlocking;
     
-    IBOutlet NSMatrix *telePlayStyle;
-    
     // Crates
     IBOutlet NSMatrix *teleCrateActions;
     IBOutlet NSTextField *teleMaxCrateLevel;
