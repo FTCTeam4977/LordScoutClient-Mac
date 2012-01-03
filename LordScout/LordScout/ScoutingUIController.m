@@ -91,7 +91,7 @@
     
     NSString* notes = [[extraNotes stringValue] stringByReplacingOccurrencesOfString:@"~" withString:@""];
     
-    const char *data = [[NSString stringWithFormat:@"%@~%i~%i~%i~%i~%i~%i~%i~%i~%i~%i~%i~%i~%@\n", uid, team, 
+    const char *data = [[NSString stringWithFormat:@"%@~%i~%i~%i~%i~%i~%i~%i~%i~%i~%i~%i~%@\n", uid, team, 
                          autoBowlingBallid, autoParkingid, autoBlockingid, teleCrateActionsid, teleMaxCrateLevelnum,
                          teleNumOfCratesnum, teleNumOfStacksnum, teleBallsPerCratenum,
                          teleMagBallsScorednum, teleBowlingBallid, notes] UTF8String];
